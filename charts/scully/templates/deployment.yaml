@@ -23,7 +23,7 @@ spec:
         imagePullPolicy: {{ .Values.image.pullPolicy }}
         env:
         - name: SERVER
-          value: http://mulder
+          value: http://{{ .Release.Name }}-mulder
         ports:
         - containerPort: {{ .Values.service.internalPort }}
         livenessProbe:
